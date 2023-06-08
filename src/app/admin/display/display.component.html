@@ -1,0 +1,57 @@
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <app-sidebar></app-sidebar>
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class="dash-header">
+                            <div class="dash-title">
+                                <h3>Blogs</h3>
+                            </div><br><br>
+                            <div class="dash-nav">
+                                <a href="blog-form.html" class="btn btn-success">Add Post</a>
+                            </div>
+                        </div>
+                        <table class="table table-bordered table-striped">
+                            <tr>
+                                <!-- <th>#ID</th> -->
+                                <!-- <th>Image</th> -->
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>image</th>
+                                <th>Action</th>
+                            </tr>
+                            <tr *ngFor="let d of data">
+                                <!-- <td>1</td> -->
+                                <!-- <td><img src={{d.urlToImage}}></td> -->
+                                <td>{{d.title}}</td>
+                                <td>{{d.description}}</td>
+                                <td><img src="http://127.0.0.1:8000/upload/{{d.image}}" alt="" width="106px" height="80px"></td>
+                                <td>
+                                    <a [routerLink]="['/admin-viewblog/',d.id]" routerLinkActive="router-link-active"
+                                        class="btn btn-primary bg-primary"><i class="far fa-eye"></i>
+                                    
+                                    </a>&nbsp;
+                                    <a [routerLink]="['/admin-editblog/',d.id]" routerLinkActive="router-link-active"
+                                        class="btn btn-success bg-success"><i class="fas fa-edit"></i></a>&nbsp;
+
+                                    <a (click)="deleteblog(d.id)" class="btn btn-danger bg-danger"><i
+                                    class="far fa-trash-alt"></i></a>
+                                </td>
+                                <!-- <td>
+                                    <button class="btn-info ">edit</button>
+                                    <a [routerLink]="['/admin-viewblog/',d.id]" routerLinkActive="router-link-active"  class="btn btn-info btn-sm bg-warning">View</a> 
+                                    <a [routerLink]="['/admin-editblog/',d.id]" routerLinkActive="router-link-active"  class="btn btn-info btn-sm">Edit</a>                                                                                                      
+                                <a (click)="deleteblog(d.id)" class="btn btn-danger btn-sm">Delete</a>
+                            </td> -->
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

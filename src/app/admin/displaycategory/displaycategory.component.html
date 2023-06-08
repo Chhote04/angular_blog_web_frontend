@@ -1,0 +1,45 @@
+
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <app-sidebar></app-sidebar>
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class="dash-header">
+                            <div class="dash-title">
+                                <h3>Categories</h3>
+                            </div><br><br>
+                            <div class="dash-nav">
+                                <a [routerLink]="['/admin-createblog']" class="btn btn-success">Add Blog</a>
+                            </div>
+                        </div>
+                        <table class="table table-bordered table-striped">
+                            <tr>
+                                
+                                <!-- <th>Image</th> -->
+                                <th>Title</th>
+                                <th>Action</th>
+                            </tr>
+                            <tr *ngFor="let d of data" >
+
+                                
+                                <!-- <td><img src={{d.urlToImage}} ></td> -->
+                                <td>{{d.title}}</td>
+                                
+
+                                
+                                <td>
+                                    <a [routerLink]="[]" routerLinkActive="router-link-active" class="btn btn-primary bg-primary"><i class="far fa-eye"></i></a>&nbsp;
+                                    <a [routerLink]="[]" routerLinkActive="router-link-active" class="btn btn-success bg-success"><i class="fas fa-edit"></i></a>&nbsp;
+                                    <a  class="btn btn-danger bg-danger"><i class="far fa-trash-alt"></i></a>
+                                </td>
+                        </table>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
